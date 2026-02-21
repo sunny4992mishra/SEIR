@@ -32,6 +32,15 @@ class url_parser:
         
 
         return {"title": title, "body": body, "links": links}
+    def hash(word):
+        m=(0b1<<64)-1
+        p=53
+        p_val=1
+        hash_value=0
+        for c in word:
+            hash_value=(hash_value+ord(c)*p_val) & m
+            p_val=(p_val*p) & m
+        return hash_value
 if __name__ == "__main__":
     url=input("Enter the url :  ")
     print()
