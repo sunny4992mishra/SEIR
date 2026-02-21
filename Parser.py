@@ -13,18 +13,10 @@ class url_parser:
         try:
             page=requests.get(url,headers=headers,timeout=10)
             page.raise_for_status()
-        except requests.exceptions.HTTPError as e:
-            print(f"HTTP Error {page.status_code}: {e}")
-            return None
-        except requests.exceptions.ConnectionError:
-            print(f"Failed to connect to {url}")
-            return None
-        except requests.exceptions.Timeout:
-            print(f"Request timed out for {url}")
-            return None
         except Exception as e:
                 print(f"Unexpected error: {type(e).__name__}: {e}")
                 return None
+        
         soup=BeautifulSoup(page.text,"lxml")
         title=soup.title.get_text(strip=True) if soup.title else "No title"
         body=soup.body.get_text(strip=True) if soup.body else "No body"
