@@ -5,7 +5,7 @@ from nltk.corpus import stopwords
 stop_words = set(stopwords.words('english'))
 
 
-def parse(url):
+def read_url(url):
     headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
                 "AppleWebKit/537.36 (KHTML, like Gecko) "
@@ -82,8 +82,8 @@ def count_common_bits(doc1_fingerprint,doc2_fingerprint):
     return count
 
 def show_similarity(url1,url2):
-    doc1=parse(url1)
-    doc2=parse(url2)
+    doc1=read_url(url1)
+    doc2=read_url(url2)
     if not doc1 or not doc2:
         print("unable to parse page ")
         return None
@@ -103,7 +103,7 @@ if __name__ == "__main__":
     
     if len(sys.argv)==2:
         url=sys.argv[1]
-        result=parse(url)
+        result=read_url(url)
         if result:
             print("Title:", result["title"])
             print()
