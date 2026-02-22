@@ -106,11 +106,11 @@ if __name__ == "__main__":
             print()
             print("Links found:", len(result["links"]))
             print()
-            # for link in result["links"]:
-            #     print(link)
+            for link in result["links"]:
+                print(link)
     elif len(sys.argv)==3:
         print("The count of similar bits is: ", show_similarity(sys.argv[1],sys.argv[2]))
-        
+
     else:
         print("Invalid input")
         sys.exit(1)
