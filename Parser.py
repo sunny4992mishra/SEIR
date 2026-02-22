@@ -109,7 +109,7 @@ if __name__ == "__main__":
             for link in result["links"]:
                 print(link)
     elif len(sys.argv)==3:
-        print("The count of similar bits is: ", show_similarity(sys.argv[1],sys.argv[2]))
+        print("The count of similar bits is(out of 64): ", show_similarity(sys.argv[1],sys.argv[2]))
 
     else:
         print("Invalid input")
