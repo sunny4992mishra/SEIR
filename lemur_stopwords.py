@@ -1,4 +1,4 @@
-LEMUR_STOPWORDS = {
+LEMUR_STOPWORDS = set({
     "a", "about", "above", "according", "across", "after", "afterwards", "again", 
     "against", "albeit", "all", "almost", "alone", "along", "already", "also", 
     "although", "always", "am", "among", "amongst", "an", "and", "another", 
@@ -53,4 +53,4 @@ LEMUR_STOPWORDS = {
     "whose", "whosoever", "why", "will", "wilt", "with", "within", "without", 
     "worse", "worst", "would", "wow", "ye", "yet", "year", "yippee", "you", 
     "your", "yours", "yourself", "yourselves"
-}
+})
