@@ -1,8 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
 import sys
-from nltk.corpus import stopwords
-stop_words = set(stopwords.words('english'))
+from lemur_stopwords import LEMUR_STOPWORDS
+
 
 
 def read_url(url):
@@ -48,7 +48,7 @@ def tokenise_frequency(text):
         else:
             if word:
                 key=''.join(word)
-                if key not in stop_words:
+                if key not in LEMUR_STOPWORDS:
                     if key in frequency_map:
                         frequency_map[key]+=1
                     else:
@@ -56,7 +56,7 @@ def tokenise_frequency(text):
                 word=[]
     if word:
         key=''.join(word)
-        if key not in stop_words:
+        if key not in LEMUR_STOPWORDS:
             if key in frequency_map:
                 frequency_map[key]+=1
             else:
